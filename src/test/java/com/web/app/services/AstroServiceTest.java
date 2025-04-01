@@ -17,4 +17,20 @@ class AstroServiceTest {
         assertTrue(people.contains("people"));
         System.out.println(people);
     }
+
+    @Test
+    void getAstroResponse() {
+        var response = svc.getAstroResponse();
+        assertNotNull(response);
+        assertEquals("success", response.message());
+        assertTrue(response.number()>0);
+    }
+
+    @Test
+    void getAstroResponseAsync() {
+        var response = svc.getAstroResponseAsync();
+        assertNotNull(response);
+        assertEquals("success", response.message());
+        assertTrue(response.number()>0);
+    }
 }
