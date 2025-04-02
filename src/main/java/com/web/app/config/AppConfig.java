@@ -21,8 +21,8 @@ public class AppConfig {
     }
 
     @Bean
-    public AstroInterface astroInterface(@Value("${astro.url}") String baseUrl) {
-        System.out.println(baseUrl);
+    public AstroInterface astroInterface(@Value("${astro.url}") String astroUrl) {
+        System.out.println(astroUrl);
         WebClient webClient = WebClient.create("http://api.open-notify.org");
         WebClientAdapter adapter = WebClientAdapter.create(webClient);
         HttpServiceProxyFactory factory = HttpServiceProxyFactory.builderFor(adapter).build();
